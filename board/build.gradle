@@ -1,16 +1,15 @@
+//java빌드에 필요한 플러그인 설정
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.3.1'
-	id 'io.spring.dependency-management' version '1.1.5'
+    id 'java'
+    id 'org.springframework.boot' version '2.7.11'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
 group = 'com.beyond'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
+	sourceCompatibility = '11'
 }
 
 configurations {
@@ -33,6 +32,21 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// batch 의존성 추가
+	implementation 'org.springframework.boot:spring-boot-starter-batch'
+	
+	// 로그인 관련 시큐리티 의존성 추가
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// 타임리프에서 시큐리티 문법을 쓰기 위한 라이브러리
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
+	//redis 사용을 위한 의존성 추가
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	
+	//세션 스토리지를 redis에 저장하기 위한 의존성 추가
+	implementation 'org.springframework.session:spring-session-data-redis'
 }
 
 tasks.named('test') {

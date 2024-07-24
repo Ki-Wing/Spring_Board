@@ -1,0 +1,11 @@
+
+#starting point는 apllication.yml
+spring:
+  profiles:
+    active: prod
+
+
+# 추후 jar 실행시
+# 아래 같이 실행한 application.yml에 설정을 덮어쓰기
+# java "-Dspring.profiles.active=prod" -jar <jar파일명>
+
