@@ -17,6 +17,13 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
+board/src/main/resources/application.yml
+board/src/main/resources/logback-spring.xml
+board/src/main/resources/application-prod.yml
+board/src/main/resources/application-dev.yml
+board/build.gradle
+
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
